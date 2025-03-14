@@ -69,4 +69,11 @@ public class Windows extends Terminal{
                 GerenciadorArquivos.criaArquivo(arquivo);
         }
 
+        @Override
+        public void echo(String texto, String addFim){
+
+                // tratando o texto
+                if()
+        }
+
 }

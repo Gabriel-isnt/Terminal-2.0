@@ -6,19 +6,22 @@ public class Gerenciador {
 
                 entrada = entrada.trim();
 
+                String addFim = "false";
+
                 if(entrada.isEmpty()){
-                        return new String[]{null, null, null};
+                        return new String[]{null, null, null, addFim};
                 }
 
                 String comando = null;
                 String texto   = null;
                 String arquivo = null;
 
+
                 // tratando sobre o comando
                 int parte1 = entrada.indexOf((" "));
 
                 if(parte1 == -1) {
-                        return new String[]{entrada, null, null};
+                        return new String[]{entrada, null, null, addFim};
                 }
 
                 comando = entrada.substring(0, parte1);
@@ -30,7 +33,12 @@ public class Gerenciador {
 
                 if(parte2 == -1){
                         texto = textoArquivo;
-                        return new String[]{comando, texto, null};
+                        return new String[]{comando, texto, null, addFim};
+                }
+
+                // vendo se tem >> ou só >
+                if(textoArquivo.charAt(parte2 + 1) == '>'){
+                        addFim = "true";
                 }
 
                 // tratando sobre o arquivo
@@ -38,7 +46,7 @@ public class Gerenciador {
 
                 arquivo = textoArquivo.substring(parte2 + 1).trim();
 
-                return new String[]{comando, texto, arquivo};
+                return new String[]{comando, texto, arquivo, addFim};
         }
 
 
