@@ -8,11 +8,13 @@ public class Windows extends Terminal{
 
         @Override
         public void exibicao(){
+
                 System.out.print(System.getProperty("user.dir") + "> ");
         }
 
         @Override
         public void pwd() {
+
                 System.out.println(Windows.dirAtual);
                 System.out.println();
         }

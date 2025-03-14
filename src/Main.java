@@ -35,6 +35,11 @@ public class Main {
 
                         partesComando = Gerenciador.trataEntrada(comandoPassado);
 
+                        if(partesComando[0] == null || partesComando[0].isEmpty()){
+                                System.out.println("comando não reconhecido\n");
+                                continue;
+                        }
+
                         if(partesComando[0].equals("exit")){
                                 break;
                         }
@@ -65,6 +70,7 @@ public class Main {
         }
 
         public static void ajuda(){
+
                 for(Map.Entry<String, String> entry : help.entrySet()){
                         System.out.printf("%-20s: %s\n", entry.getKey(), entry.getValue());
                 }

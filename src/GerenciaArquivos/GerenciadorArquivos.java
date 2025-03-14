@@ -8,6 +8,7 @@ import java.io.IOException;
 public class GerenciadorArquivos {
 
         public static void leArquivo(String arquivo){
+
                 File arq = new File(arquivo);
 
                 if(!arq.exists()){
@@ -29,6 +30,7 @@ public class GerenciadorArquivos {
         }
 
         public static void criaArquivo(String arquivo){
+
                 File arq = new File(arquivo);
 
                 if(arq.exists()){
