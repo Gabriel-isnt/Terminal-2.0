@@ -13,6 +13,6 @@ public abstract class Terminal {
         public abstract void cd();
         public abstract void ls();
         public abstract void cat(String arquivo);
-
+        public abstract void touch(String arquivo);
 
 }

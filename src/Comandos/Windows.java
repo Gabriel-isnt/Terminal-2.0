@@ -1,8 +1,8 @@
 package src.Comandos;
 
+import src.GerenciaArquivos.GerenciadorArquivos;
+
 import java.io.File;
-import java.io.BufferedReader;
-import java.io.Reader;
 
 public class Windows extends Terminal{
 
@@ -48,6 +48,23 @@ public class Windows extends Terminal{
         @Override
         public void cat(String arquivo){
 
+                if(arquivo == null || arquivo.isEmpty()){
+                        System.out.println("nenhum arquivo passado\n");
+                        return;
+                }
+
+                GerenciadorArquivos.leArquivo(arquivo);
+        }
+
+        @Override
+        public void touch(String arquivo){
+
+                if(arquivo == null || arquivo.isEmpty()){
+                        System.out.println("nenhum arquivo passado\n");
+                        return;
+                }
+
+                GerenciadorArquivos.criaArquivo(arquivo);
         }
 
 }
