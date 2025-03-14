@@ -20,7 +20,7 @@ public class Main {
                 help.put("exit", "encerra o programa");
                 help.put("cat <Arquivo>", "mostra o conteúdo de dentro de um arquivo de texto");
                 help.put("touch <Arquivo>", "cria um arquivo vazio para escrita");
-                help.put("echo <texto> >/>> <arquivo>", "escreve ou sobrescreve em um arquivo de escrita existente");
+                help.put("echo <texto> >/>> <arquivo>", "escreve/sobrescreve em um arquivo de escrita existente");
 
                 Scanner sc  = new Scanner(System.in);
                 Terminal tm = new Windows();
