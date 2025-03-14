@@ -34,7 +34,6 @@ public class Main {
                 String addFim;
 
                 // código em sí
-
                 do{
                         tm.exibicao();
                         comandoPassado = sc.nextLine();
@@ -55,8 +54,7 @@ public class Main {
                                 break;
                         }
 
-
-                        switch(partesComando[0]){
+                        switch(comando){
                                 case "help":
                                         ajuda();
                                         break;
