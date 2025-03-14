@@ -22,12 +22,16 @@ public class Main {
                 help.put("touch <Arquivo>", "cria um arquivo vazio para escrita");
                 help.put("echo <texto> >/>> <arquivo>", "escreve ou sobrescreve em um arquivo de escrita existente");
 
-
                 Scanner sc  = new Scanner(System.in);
                 Terminal tm = new Windows();
 
                 String comandoPassado;
                 String[] partesComando;
+
+                String comando;
+                String texto;
+                String arquivo;
+                String addFim;
 
                 // código em sí
 
@@ -37,14 +41,20 @@ public class Main {
 
                         partesComando = Gerenciador.trataEntrada(comandoPassado);
 
-                        if(partesComando[0] == null || partesComando[0].isEmpty()){
+                        comando = partesComando[0];
+                        texto   = partesComando[1];
+                        arquivo = partesComando[2];
+                        addFim  = partesComando[3];
+
+                        if(comando == null || comando.isEmpty()){
                                 System.out.println("comando não reconhecido\n");
                                 continue;
                         }
 
-                        if(partesComando[0].equals("exit")){
+                        if(comando.equals("exit")){
                                 break;
                         }
+
 
                         switch(partesComando[0]){
                                 case "help":
@@ -62,6 +72,9 @@ public class Main {
                                 case "touch":
                                         tm.touch(partesComando[1]);
                                         break;
+                                case "echo":
+                                        tm.echo(arquivo, texto, addFim);
+                                        break;
                                default:
                                         System.out.println("comando não reconhecido\n");
                         }
@@ -74,7 +87,7 @@ public class Main {
         public static void ajuda(){
 
                 for(Map.Entry<String, String> entry : help.entrySet()){
-                        System.out.printf("%-20s: %s\n", entry.getKey(), entry.getValue());
+                        System.out.printf("%-30s: %s\n", entry.getKey(), entry.getValue());
                 }
 
                 System.out.println();

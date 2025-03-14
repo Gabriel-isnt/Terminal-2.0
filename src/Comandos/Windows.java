@@ -70,10 +70,11 @@ public class Windows extends Terminal{
         }
 
         @Override
-        public void echo(String texto, String addFim){
+        public void echo(String arquivo, String texto, String addFim){
 
-                // tratando o texto
-                if()
+                if(!GerenciadorArquivos.escreveArquivo(arquivo, texto, addFim)){
+                        System.out.println("Não foi possível escrever");
+                }
         }
 
 }

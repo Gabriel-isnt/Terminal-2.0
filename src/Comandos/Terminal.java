@@ -15,6 +15,6 @@ public abstract class Terminal {
         public abstract void ls();
         public abstract void cat(String arquivo);
         public abstract void touch(String arquivo);
-        public abstract void echo(String texto, String addFim);
+        public abstract void echo(String arquivo, String texto, String addFim);
 
 }

@@ -57,7 +57,7 @@ public class GerenciadorArquivos {
                 return true;
         }
 
-        public static boolean escreveArquivo(String arquivo, String texto,String addFim){
+        public static boolean escreveArquivo(String arquivo, String texto, String addFim){
 
                 // validando o arquivo
                 if(arquivo == null || arquivo.isEmpty()){
@@ -72,6 +72,7 @@ public class GerenciadorArquivos {
                         if(!criaArquivo(arquivo)){
                                 return false;
                         }
+
                         arq = new File(arquivo);
                 }
 
@@ -86,7 +87,12 @@ public class GerenciadorArquivos {
 
                 // trantando a função agora
 
-                try(BufferedWriter bw = new BufferedWriter(new FileWriter(arquivo, append))){
+                try(BufferedWriter bw = new BufferedWriter(new FileWriter(arq, append))){
+
+                        if(append){
+                                bw.write("\n");
+                        }
+
                         bw.write(texto);
 
                 } catch (IOException e){

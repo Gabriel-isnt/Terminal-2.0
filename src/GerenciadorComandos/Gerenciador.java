@@ -44,7 +44,12 @@ public class Gerenciador {
                 // tratando sobre o arquivo
                 texto = textoArquivo.substring(0, parte2).trim();
 
-                arquivo = textoArquivo.substring(parte2 + 1).trim();
+                if(addFim.equals("false")){
+                        arquivo = textoArquivo.substring(parte2 + 1).trim();
+
+                } else {
+                        arquivo = textoArquivo.substring(parte2 + 2).trim();
+                }
 
                 return new String[]{comando, texto, arquivo, addFim};
         }
